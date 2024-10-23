@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Financeiros</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <script src="{{url_for('static', filename='js/scripts.js')}}" defer></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <h1>Relatórios Financeiros</h1>
+
+        <div class="actions">
+            <a href="/cadastrartransacao" class="button">Cadastrar Lucro/Despesa</a>
+            <a href="/logout" class="button">Logout</a>
+        </div>
+
+        <!-- Tabela de transações -->
+        <div class="report-table">
+            <table id="transacoes-tabela">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Nome</th>
+                        <th>Valor</th>
+                        <th>Descrição</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody id="transacoes-corpo">
+                    <!-- As transações serão preenchidas aqui pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cálculo do saldo -->
+        <div class="balance-section">
+            <h2>Saldo Atual</h2>
+            <p id="resumo-saldo">
+                Total de Ganhos: R$ <span id="total-ganhos">0.00</span><br>
+                Total de Despesas: R$ <span id="total-despesas">0.00</span><br>
+                Saldo Final: <span id="saldo-final" class="positive">R$ 0.00</span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
